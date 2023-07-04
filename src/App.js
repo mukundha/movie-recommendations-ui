@@ -23,7 +23,7 @@ function App() {
   const fetchRecommendations = async () => {
     try {
       const response = await fetch(
-        'http://localhost:5000/recommendations?user_id=1&num_recommendations=30&user_last_watched=2&user_last_rating=3&realtime=true'
+        'https://movie-recommendations-api-on6jpzkmia-uc.a.run.app/recommendations?user_id=1&num_recommendations=30&user_last_watched=2&user_last_rating=3&realtime=true'
       );
       const data = await response.json();
       setMovies(data.recommendations);
@@ -42,7 +42,7 @@ function App() {
     if (mode === 'Realtime AI') {
       try {
         const response = await fetch(
-          `http://localhost:5000/recommendations?user_id=1&num_recommendations=30&user_last_watched=${selectedMovie.movieId}&user_last_rating=${ratingValue}&realtime=true`
+          `https://movie-recommendations-api-on6jpzkmia-uc.a.run.app/recommendations?user_id=1&num_recommendations=30&user_last_watched=${selectedMovie.movieId}&user_last_rating=${ratingValue}&realtime=true`
         );
         const data = await response.json();
         setMovies(data.recommendations);
